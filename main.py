@@ -10,7 +10,7 @@ class MainMenuEntry(enum.Enum):
     CONTRACTS = (2, "Трудовые договора")
     VACATIONS = (3, "Отпуски")
     TRAINING = (4, "Обучение")
-    PERFORMANCE_EVALUTION = (5, "Оценка производительности")
+    PERFORMANCE_EVALUATION = (5, "Оценка производительности")
 
     def __init__(self, num, item):
         self.num = num
@@ -36,7 +36,7 @@ def main():
         print("VACATIONS")
     elif menu_entry_num == MainMenuEntry.TRAINING.num:
         print("TRAINING")
-    elif menu_entry_num == MainMenuEntry.PERFORMANCE_EVALUTION.num:
+    elif menu_entry_num == MainMenuEntry.PERFORMANCE_EVALUATION.num:
         print("PERFORMANCE_EVALUTION")
 
 
