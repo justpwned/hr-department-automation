@@ -11,6 +11,7 @@ class MainMenuEntry(enum.Enum):
     VACATIONS = (3, "Отпуски")
     TRAINING = (4, "Обучение")
     PERFORMANCE_EVALUATION = (5, "Оценка производительности")
+    REPORTS = (6, "Отчеты")
 
     def __init__(self, num, item):
         self.num = num
@@ -21,11 +22,11 @@ def main_menu():
     return TerminalMenu(
         [entry.item for entry in MainMenuEntry],
         title="Главное меню:"
-    )
+    ).show()
 
 
 def main():
-    menu_entry_num = main_menu().show()
+    menu_entry_num = main_menu()
     if menu_entry_num == MainMenuEntry.EMPLOYEES.num:
         print("EMPLOYEES")
     elif menu_entry_num == MainMenuEntry.DEPARTMENTS.num:
