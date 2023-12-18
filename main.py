@@ -1,7 +1,13 @@
 import enum
-import inquirer
 import sys
+import os
 from simple_term_menu import TerminalMenu
+from loguru import logger
+from db import Database
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class MainMenuEntry(enum.Enum):
@@ -38,10 +44,16 @@ def main():
     elif menu_entry_num == MainMenuEntry.TRAINING.num:
         print("TRAINING")
     elif menu_entry_num == MainMenuEntry.PERFORMANCE_EVALUATION.num:
-        print("PERFORMANCE_EVALUTION")
+        print("PERFORMANCE_EVALUATION")
 
 
 if __name__ == "__main__":
+    logger.add("file_{time}.log")
+    db = Database(os.environ.get("DATABASE_HOST"),
+                  os.environ.get("DATABASE_USERNAME"),
+                  os.environ.get("DATABASE_PASSWORD"),
+                  os.environ.get("DATABASE_PORT"),
+                  os.environ.get("DATABASE_NAME"))
     try:
         main()
     except KeyboardInterrupt:
