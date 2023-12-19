@@ -1,19 +1,19 @@
-INSERT INTO "Employee" (first_name, last_name, date_of_birth, gender, phone_number, email)
+INSERT INTO "Employee" (first_name, last_name, date_of_birth, gender, email)
 VALUES
-    ('Иван', 'Иванов', '1990-05-15', 'M', '123456789', 'ivan.ivanov@email.com'),
-    ('Елена', 'Петрова', '1985-08-22', 'F', '987654321', 'elena.petrova@email.com'),
-    ('Александр', 'Смирнов', '1982-11-10', 'M', '555555555', 'alex.smirnov@email.com'),
-    ('Марина', 'Козлова', '1988-07-20', 'F', '111223344', 'marina.kozlova@email.com'),
-    ('Анна', 'Попова', '1993-09-18', 'F', '555444333', 'anna.popova@email.com'),
-    ('Павел', 'Кузнецов', '1987-12-05', 'M', '666777888', 'pavel.kuznetsov@email.com'),
-    ('Екатерина', 'Сидорова', '1991-04-30', 'F', '333222111', 'ekaterina.sidorova@email.com'),
-    ('Алексей', 'Никитин', '1998-02-15', 'M', '999000111', 'alexey.nikitin@email.com'),
-    ('Ольга', 'Белякова', '1984-11-22', 'F', '111000222', 'olga.belyakova@email.com'),
-    ('Игорь', 'Макаров', '1980-06-10', 'M', '444333222', 'igor.makarov@email.com'),
-    ('Маргарита', 'Лебедева', '1990-08-03', 'F', '888999000', 'margarita.lebedeva@email.com'),
-    ('Сергей', 'Григорьев', '1986-01-25', 'M', '222333444', 'sergey.grigoriev@email.com'),
-    ('Анастасия', 'Королева', '1995-05-12', 'F', '777666555', 'anastasia.koroleva@email.com'),
-    ('Денис', 'Борисов', '1989-07-08', 'M', '555666777', 'denis.borisov@email.com');
+    ('Иван', 'Иванов', '1990-05-15', 'M', 'ivan.ivanov@email.com'),
+    ('Елена', 'Петрова', '1985-08-22', 'F', 'elena.petrova@email.com'),
+    ('Александр', 'Смирнов', '1982-11-10', 'M', 'alex.smirnov@email.com'),
+    ('Марина', 'Козлова', '1988-07-20', 'F', 'marina.kozlova@email.com'),
+    ('Анна', 'Попова', '1993-09-18', 'F', 'anna.popova@email.com'),
+    ('Павел', 'Кузнецов', '1987-12-05', 'M', 'pavel.kuznetsov@email.com'),
+    ('Екатерина', 'Сидорова', '1991-04-30', 'F', 'ekaterina.sidorova@email.com'),
+    ('Алексей', 'Никитин', '1998-02-15', 'M', 'alexey.nikitin@email.com'),
+    ('Ольга', 'Белякова', '1984-11-22', 'F', 'olga.belyakova@email.com'),
+    ('Игорь', 'Макаров', '1980-06-10', 'M', 'igor.makarov@email.com'),
+    ('Маргарита', 'Лебедева', '1990-08-03', 'F', 'margarita.lebedeva@email.com'),
+    ('Сергей', 'Григорьев', '1986-01-25', 'M', 'sergey.grigoriev@email.com'),
+    ('Анастасия', 'Королева', '1995-05-12', 'F', 'anastasia.koroleva@email.com'),
+    ('Денис', 'Борисов', '1989-07-08', 'M', 'denis.borisov@email.com');
 
 INSERT INTO "Department" (description, head_id)
 VALUES

@@ -2,7 +2,7 @@ import sys
 import os
 from loguru import logger
 from db import Database
-from menu.main_menu import MainMenu
+from menu.MainMenu import MainMenu
 
 from dotenv import load_dotenv
 
@@ -10,9 +10,8 @@ load_dotenv()
 
 
 def main(db):
-    main_menu = MainMenu()
-    main_menu.show()
-    main_menu.handle(db)
+    main_menu = MainMenu(db)
+    main_menu.loop()
 
 
 if __name__ == "__main__":

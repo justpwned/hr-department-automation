@@ -2,7 +2,6 @@ CREATE TABLE "Employee" (
     id serial PRIMARY KEY,
     first_name text NOT NULL, last_name text NOT NULL, date_of_birth date NOT NULL,
     gender character(1) NOT NULL,
-    phone_number text NOT NULL,
     email text NOT NULL,
     department_id integer,
     CONSTRAINT gender_check CHECK (gender in ('M', 'F'))
