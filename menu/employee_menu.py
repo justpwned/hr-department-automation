@@ -13,3 +13,16 @@ class EmployeeMenu(BaseMenu):
         def __init__(self, num, item):
             self.num = num
             self.item = item
+
+    def __init__(self):
+        super().__init__("Меню сотрудников: ")
+
+    def handle(self,  db):
+        if self.selected_entry == EmployeeMenu.Entry.READ.num:
+            logger.info("READ EMPLOYEE")
+        elif self.selected_entry == EmployeeMenu.Entry.UPDATE.num:
+            logger.info("UPDATE EMPLOYEE")
+        elif self.selected_entry == EmployeeMenu.Entry.DELETE.num:
+            logger.info("DELETE EMPLOYEE")
+        elif self.selected_entry == EmployeeMenu.Entry.CREATE.num:
+            logger.info("CREATE EMPLOYEE")

@@ -6,7 +6,7 @@ class BaseMenu:
         self.title = title
 
     def show(self):
-        return TerminalMenu(
+        self.selected_entry = TerminalMenu(
             [entry.item for entry in self.Entry],
             title=self.title
         ).show()

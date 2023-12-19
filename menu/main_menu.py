@@ -1,4 +1,5 @@
 from .base import BaseMenu
+from .employee_menu import EmployeeMenu
 import enum
 from loguru import logger
 
@@ -18,22 +19,25 @@ class MainMenu(BaseMenu):
             self.num = num
             self.item = item
 
-    def handle(self, entry_num, db):
-        if entry_num == MainMenu.Entry.EMPLOYEES.num:
-            logger.info("EMPLOYEES")
-            # view_employees()
-            # edit_employee()
-            # remove_employee()
-            # add_employee()
-        elif entry_num == MainMenu.Entry.DEPARTMENTS.num:
-            logger.info("DEPARTMENTS")
-        elif entry_num == MainMenu.Entry.CONTRACTS.num:
-            logger.info("CONTRACTS")
-        elif entry_num == MainMenu.Entry.VACATIONS.num:
-            logger.info("VACATIONS")
-        elif entry_num == MainMenu.Entry.TRAINING.num:
-            logger.info("TRAINING")
-        elif entry_num == MainMenu.Entry.PERFORMANCE_EVALUATION.num:
-            logger.info("PERFORMANCE_EVALUATION")
-        elif entry_num == MainMenu.Entry.POPULATE_DB.num:
+    def __init__(self):
+        super().__init__("Главное меню: ")
+
+    def handle(self,  db):
+        if self.selected_entry == MainMenu.Entry.EMPLOYEES.num:
+            logger.info("EMPLOYEE MENU ENTRY SELECTED")
+            menu = EmployeeMenu()
+            menu.show()
+            menu.handle(db)
+        elif self.selected_entry == MainMenu.Entry.DEPARTMENTS.num:
+            logger.info("DEPARTMENTS MENU ENTRY SELECTED")
+        elif self.selected_entry == MainMenu.Entry.CONTRACTS.num:
+            logger.info("CONTRACTS MENU ENTRY SELECTED")
+        elif self.selected_entry == MainMenu.Entry.VACATIONS.num:
+            logger.info("VACATIONS MENU ENTRY SELECTED")
+        elif self.selected_entry == MainMenu.Entry.TRAINING.num:
+            logger.info("TRAINING MENU ENTRY SELECTED")
+        elif self.selected_entry == MainMenu.Entry.PERFORMANCE_EVALUATION.num:
+            logger.info("PERFORMANCE_EVALUATION MENU ENTRY SELECTED")
+        elif self.selected_entry == MainMenu.Entry.POPULATE_DB.num:
+            logger.info("POPULATE DATABASE MENU ENTRY SELECTED")
             db.define_schema_and_populate()

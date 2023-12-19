@@ -10,9 +10,9 @@ load_dotenv()
 
 
 def main(db):
-    main_menu = MainMenu("Главное меню:")
-    menu_entry_num = main_menu.show()
-    main_menu.handle(menu_entry_num, db)
+    main_menu = MainMenu()
+    main_menu.show()
+    main_menu.handle(db)
 
 
 if __name__ == "__main__":
