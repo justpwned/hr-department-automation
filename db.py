@@ -1,5 +1,6 @@
 import psycopg
 from loguru import logger
+from getkey import getkey
 
 
 class Database:
@@ -31,14 +32,13 @@ class Database:
             with open('sql/data.sql') as f:
                 self.conn.execute(f.read())
         except psycopg.DatabaseError:
-            logger.exception("Failed to populate database")
+            print("Не удалось записать в базу данных")
             self.conn.rollback()
         except OSError:
-            logger.exception("Failed to open a file")
+            print("Не удалось открыть файл")
             self.conn.rollback()
         else:
-            logger.info("Database schema has been successfully defined and"
-                        "populated with data")
+            print("Запись прошла успешно")
             self.conn.commit()
 
     def close(self):

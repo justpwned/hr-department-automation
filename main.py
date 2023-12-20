@@ -15,9 +15,7 @@ def main(db):
 
 
 if __name__ == "__main__":
-    if os.environ.get("DEBUG") is None:
-        logger.remove()
-
+    logger.remove()
     logger.add("execution.log")
 
     db = Database(os.environ.get("DATABASE_HOST"),

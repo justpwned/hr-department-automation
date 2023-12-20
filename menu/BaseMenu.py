@@ -11,7 +11,8 @@ class BaseMenu:
         self.selected_entry = TerminalMenu(
             [entry.item for entry in self.Entry],
             title=self.title,
-            clear_screen=True
+            clear_screen=True,
+            raise_error_on_interrupt=True
         ).show()
 
     def running(self):

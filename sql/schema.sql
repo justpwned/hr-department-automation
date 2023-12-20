@@ -19,8 +19,7 @@ ALTER TABLE "Employee" ADD CONSTRAINT FK_employee_department FOREIGN KEY (depart
 CREATE TABLE "Education" (
     id serial PRIMARY KEY,
     description text NOT NULL,
-    start_date date NOT NULL,
-    end_date date NOT NULL,
+    graduation_date date NOT NULL,
     employee_id integer NOT NULL,
     CONSTRAINT FK_education_employee FOREIGN KEY (employee_id) REFERENCES "Employee"(id)
 );
@@ -33,7 +32,7 @@ CREATE TABLE "PerformanceEvaluation" (
     comment text NOT NULL,
     employee_id integer NOT NULL,
     CONSTRAINT rating_check CHECK (rating BETWEEN 1 AND 5),
-    CONSTRAINT FK_performanceevaluation_employee FOREIGN KEY (employee_id) REFERENCES "Employee"(id)
+    CONSTRAINT FK_performanceevaluation_employee FOREIGN KEY (employee_id) REFERENCES "Employee"(id) ON DELETE CASCADE
 );
 
 CREATE TABLE "Vacation" (
@@ -42,15 +41,15 @@ CREATE TABLE "Vacation" (
     start_date date NOT NULL,
     end_date date NOT NULL,
     employee_id integer NOT NULL,
-    CONSTRAINT FK_vacation_employee FOREIGN KEY (employee_id) REFERENCES "Employee"(id)
+    CONSTRAINT FK_vacation_employee FOREIGN KEY (employee_id) REFERENCES "Employee"(id) ON DELETE CASCADE
 );
 
 CREATE TABLE "WorkContract" (
     id serial PRIMARY KEY,
-    start_date date NOT NULL,
-    end_date date NOT NULL,
+    conclusion_date date NOT NULL,
     job_title text NOT NULL,
-    salary money NOT NULL,
+    salary integer NOT NULL,
     employee_id integer NOT NULL,
-    CONSTRAINT FK_workcontract_employee FOREIGN KEY (employee_id) REFERENCES "Employee"(id)
+    CONSTRAINT salary_check CHECK (salary > 0),
+    CONSTRAINT FK_workcontract_employee FOREIGN KEY (employee_id) REFERENCES "Employee"(id) ON DELETE CASCADE
 );
